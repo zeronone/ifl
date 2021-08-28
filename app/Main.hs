@@ -1,8 +1,19 @@
 module Main where
 
-import qualified MyLib (someFunc)
+import Core1.Parser (parseFile)
+import Core1.PPrint (pprint)
+import System.Environment ( getArgs )
 
 main :: IO ()
 main = do
-  putStrLn "Hello, Haskell!"
-  MyLib.someFunc
+  args <- getArgs
+  let filename = head args
+
+  putStrLn "Parsed AST"
+  prog <- parseFile filename
+  print prog
+
+  putStrLn "\n\nPretty printed version"
+  putStrLn "|----------------"
+  putStrLn . pprint $ prog
+  putStrLn "|----------------"

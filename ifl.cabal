@@ -21,8 +21,9 @@ extra-source-files:
     README.md
 
 library
-    exposed-modules:  MyLib
-                      Language
+    exposed-modules:  Core1.Language
+                      Core1.Parser
+                      Core1.PPrint
 
     -- Modules included in this library but not exported.
     -- other-modules:

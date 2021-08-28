@@ -1,0 +1,16 @@
+
+f = 3;
+g x y = let z = x in z ;
+h x = case (let y = x in y) of
+        <1> -> 2 ;
+        <2> -> 5 ;
+
+f x y = case x of
+        <1> -> case y of
+                <1> -> 1;
+        <2> -> 2 ;
+
+h y = let c = Pack{1,2} ;
+          sum = \ a1 a2 . a1 + a2
+          in case y of
+               <1> a b -> sum a b
